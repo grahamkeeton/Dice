@@ -1,7 +1,7 @@
 
 Die bob;
 
-
+int val=0;
 
 void setup()
 {
@@ -12,19 +12,24 @@ void setup()
 void draw()
 {
 
-
-
+background(255,0,255);
 for(int a=50;a<300;a+=100){
 	for(int b=50;b<300;b+=100){
 		bob = new Die(a,b);
 		bob.show();
+		val +=bob.num;
 	}
+
+	
 }
+text(val,190,350);
 }
 
 void mousePressed()
 {
+	val=0;
 	redraw();
+
 }
 
 class Die //models one single dice cube
@@ -55,26 +60,32 @@ class Die //models one single dice cube
 			fill(255);
 			rect(myX,myY,50,50,10);
 			fill(0);
+
 			
 			if (num ==1){
+				
 				ellipse(myX+25,myY+25,10,10);
 			}
 			if (num ==2){
+				
 				ellipse(myX+10,myY+10,10,10);
 				ellipse(myX+40,myY+40,10,10);
 			}
 			if (num ==3){
+				
 				ellipse(myX+25,myY+25,10,10);
 				ellipse(myX+10,myY+10,10,10);
 				ellipse(myX+40,myY+40,10,10);
 			}
 			if (num ==4){
+				
 				ellipse(myX+10,myY+10,10,10);
 				ellipse(myX+40,myY+10,10,10);
 				ellipse(myX+10,myY+40,10,10);
 				ellipse(myX+40,myY+40,10,10);
 			}
 			if (num ==5){
+			
 				ellipse(myX+25,myY+25,10,10);
 				ellipse(myX+10,myY+10,10,10);
 				ellipse(myX+40,myY+10,10,10);
@@ -82,6 +93,7 @@ class Die //models one single dice cube
 				ellipse(myX+40,myY+40,10,10);
 			}
 			if (num ==6){
+				
 				ellipse(myX+10,myY+10,10,10);
 				ellipse(myX+40,myY+10,10,10);
 				ellipse(myX+10,myY+40,10,10);
@@ -90,7 +102,7 @@ class Die //models one single dice cube
 				ellipse(myX+40,myY+25,10,10);
 			}
 
-			
+		
 
 
 
